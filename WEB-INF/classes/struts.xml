@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<include file="config/struts/struts-customer.xml"></include>
+	<include file="config/struts/struts-manager.xml"></include>
+	<include file="config/struts/struts-goods.xml"></include>
+	<include file="config/struts/struts-type.xml"></include>
+	<include file="config/struts/struts-cart.xml"></include>
+	<include file="config/struts/struts-order.xml"></include>
+	<include file="config/struts/struts-chart.xml"></include>
+</struts>
+
+
+

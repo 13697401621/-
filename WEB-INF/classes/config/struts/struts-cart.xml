@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="cartAction" extends="struts-default" namespace="/cart">
+	
+		<action name="myCartList" class="cartAction2" method="myCartList" >
+			<result name="myCartList">/jsps/cart/list2.jsp</result>
+			<result name="login">/jsps/user/login.jsp</result>
+		</action>
+		
+		<action name="goodsCountChange" class="cartAction" method="goodsCountChange" >
+			<result name="goodsCountChange">/jsps/cart/list2.jsp</result>
+		</action>
+		
+		<!-- 商品数量加1或减1 -->
+		<action name="goodsCountChangeOne" class="cartAction2" method="goodsCountChangeOne" >
+			<result name="cartList">/jsps/cart/list2.jsp</result>
+		</action>
+		
+		<!-- 添加商品 -->
+		<action name="goodsAdd" class="cartAction2" method="goodsAdd" >
+			<result name="goodsAdd">/jsps/cart/list2.jsp</result>
+			<result name="login">/jsps/user/login.jsp</result>
+		</action>
+		
+		<!-- 批量删除商品 -->
+		<action name="deleteList" class="cartAction2" method="deleteList" >
+			<result name="cartList">/jsps/cart/list2.jsp</result>
+		</action>
+		
+		<!-- 删除一条商品 -->
+		<action name="deleteItem" class="cartAction2" method="deleteItem" >
+			<result name="cartList">/jsps/cart/list2.jsp</result>
+		</action>
+		
+		<action name="readyToOrder" class="cartAction2" method="readyToOrder" >
+			<result name="readyToOrder">/jsps/cart/showitem.jsp</result>
+			<result name="myCartList">/jsps/cart/list2.jsp</result>
+		</action>
+	</package> 
+</struts>

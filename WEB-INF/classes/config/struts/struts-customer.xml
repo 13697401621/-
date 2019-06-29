@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置和客户管理相关的动作 -->
+	<package name="customer" extends="struts-default" namespace="/customer">
+		
+		<!-- 获取登录页面 -->
+		<action name="loginUI" class="customerAction" method="loginUI">
+			<result name="loginUI">/jsps/user/login.jsp</result>
+		</action>
+		
+		<!-- 客户登录 -->
+		<action name="login" class="customerAction" method="login">
+			<result name="login">/jsps/main.jsp</result>
+			<result name="loginError">/jsps/user/login.jsp</result>
+		</action>
+		
+		<!-- 客户注册 -->
+		<action name="regist" class="customerAction" method="regist">
+			<result name="regist">/jsps/main.jsp</result>
+			<result name="registError">/jsps/user/regist.jsp</result>
+		</action>
+		
+		<!-- 退出系统 -->
+		<action name="quit" class="customerAction" method="quit">
+			<result name="quit">/jsps/main.jsp</result>
+		</action>
+		
+		<!-- 获取修改页面 -->
+		<action name="editUI" class="customerAction" method="editUI">
+			<result name="editUI">/jsps/user/edit.jsp</result>
+		</action>
+		
+		<!-- 修改顾客信息 -->
+		<action name="edit" class="customerAction" method="edit">
+			<result name="edit">/jsps/main.jsp</result>
+		</action>
+		
+		<!-- 修改密码 -->
+		<action name="editPwd" class="customerAction" method="editPwd">
+			<result name="editPwd">/jsps/main.jsp</result>
+			<result name="editPwdError">/jsps/user/pwd.jsp</result>
+		</action>
+	</package>
+</struts>

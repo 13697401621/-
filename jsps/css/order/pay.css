@@ -1,0 +1,105 @@
+body {
+	font-size: 10pt;
+	color: #404040;
+}
+
+.divContent {
+	width: 1000px;
+	height: 200px;
+	background-color: #efeae5;
+	margin-left: 45px;
+	line-height: 80px;
+	color: #404040;
+	border: 5px solid #efeae5;
+}
+
+.divBank {
+	border: 5px solid #efeae5;
+	width: 2000px;
+	height: 800px;
+	margin-left: 50px;
+	margin-top: 20px;
+} 
+
+.divText {
+	font-size: 12px;
+	font-weight: 500;
+	margin: 20px;
+}
+
+.spanPrice {
+	font-weight: 900;
+	font-family: 黑体;
+	margin-left: 30px;
+}
+
+.content{
+	font-weight: 900;
+	font-family: 黑体;
+	margin-left: 30px;
+}
+
+.spanOid {
+	font-size: 13px;
+	color: #878787;
+	font-family: Arial;
+	padding-top: 10px;
+	margin-left: 30px;
+}
+
+.price_t {
+	color: #c30;
+	font-weight: bold;
+	padding-right: 10px;
+	font-family: Arial;
+	font-size: 15pt;
+}
+
+img {
+	margin-right: 25px;
+}
+
+.linkNext {
+	background: url(/sshjar/images/icon2.png) no-repeat;
+	display: inline-block;
+	background-position: 20px;
+	height: 50px;
+	width: 100px;
+	margin: 0;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 800;
+	color: #ffffff;
+	line-height: 30px;
+	font-family: 黑体;
+}
+
+.linkNext:HOVER {
+	background: url(/sshjar/images/icon2.png) no-repeat;
+	display: inline-block;
+	background-position: 0 -75px;
+	height: 40px;
+	width: 190px;
+	poorfish: expression(this.onclick = function jiesuan(){return true});
+}
+
+.foot-ul{
+	
+	text-align: center;
+}
+
+
+/*完成订单*/
+.pay-step{border: 1px solid #E8E8E8;}
+.pay-step .check{border:none;border-bottom: 1px solid #E8E8E8;margin-bottom:0;}
+
+.pay-step .pay{background: #544f4b;width: 960px;height: 45px;padding: 10px;margin-bottom: 20px;}
+
+.pay-step .pay .pay-inner{width: 100%;height: 100%;background-color:#fff;}
+.pay-step .pay .pay-inner{height: 45px;line-height: 45px;}
+.pay-step .pay .pay-inner .yibao-logo{padding-top:5px;padding-left: 15px; }
+
+.pay-step .pay .pay-inner .blue{color: #3366FF;padding-right: 40px;}
+.pay-step .pay .pay-inner .red{color:#E71111;}
+

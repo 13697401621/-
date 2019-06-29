@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <!-- 动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+	<!-- 设置常量-开发模式 -->
+	<constant name="struts.devMode" value="true" /> 
+
+   
+	<package name="managerAction" extends="struts-default" namespace="/">
+	
+	
+	 <!-- 定义新的拦截器，配置prepare拦截器栈的alwaysIncokePrepare参数为false
+    <interceptors>
+		 <interceptor-stack name="manaerStack">
+			 <interceptor-ref name="paramsPrepareParamsStack">
+					<param name="prepare.alwaysInvokePrepare">false</param>
+			 </interceptor-ref>
+		 </interceptor-stack>
+    </interceptors>
+     -->
+	
+	<!-- 使用新的拦截器
+	<default-interceptor-ref name="managerStack"></default-interceptor-ref>
+	 -->
+	
+		<action name="*Manager" class="managerAction" method="{1}Manager">
+			<result name="login">/adminjsps/login.jsp</result>
+			<result name="index">/adminjsps/admin/index.jsp</result>
+			<result name="query">/adminjsps/admin/staff/list.jsp</result>
+			<result name="save">/adminjsps/admin/staff/add.jsp</result>
+			<result name="prepup">/adminjsps/admin/staff/update.jsp</result>
+			<result name="delete">/adminjsps/admin/staff/list.jsp</result>
+			
+			<!--存储添加的管理者信息，重定向到list页面  -->
+			<result name="success" type="redirect">/adminjsps/admin/staff/list.jsp</result>
+		</action>
+		
+		
+	</package> 
+</struts>

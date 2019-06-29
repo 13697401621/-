@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<bean id="orderAction" class="action.OrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"></property>
+		<property name="goodsService" ref="goodsService"></property>
+	</bean>
+	
+	<bean id="orderUtil" class="myutils.OrderUtil">
+		<property name="goodsService" ref="goodsService"></property>
+	</bean>
+	
+	<bean id="orderItemUtil" class="myutils.OrderItemUtil">
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+	
+	<bean id="orderService" class="service.impl.OrderServiceImpl">
+		<property name="orderDao" ref="orderDao"></property>
+		<property name="goodsDao" ref="goodsDao"></property>
+	</bean>
+	
+	<bean id="orderDao" class="dao.impl.OrderDaoImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	
+	<!-- ======================管理员====================== -->
+	<bean id="adminOrderAction" class="action.AdminOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+	
+	<import resource="classpath:/config/spring/spring-goods.xml"/>
+	
+	
+	
+</beans>

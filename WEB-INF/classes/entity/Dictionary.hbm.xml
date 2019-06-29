@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="entity.Dictionary" table="t_dictionary">
+    		<id name="dicid" >
+    		</id>
+    		
+    		<property name="dicname" ></property>
+    		<property name="code" ></property>
+    		<property name="value" ></property>
+    		
+    		
+    	</class>
+    </hibernate-mapping>	

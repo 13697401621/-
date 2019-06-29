@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="order" extends="struts-default" namespace="/order">
+	
+		<action name="createOrder" class="orderAction" method="createOrder">
+			<result name="myCartList">/jsps/cart/list2.jsp</result>
+			<result name="createOrder">/jsps/order/ordersucc.jsp</result>
+		</action>
+		
+		<action name="customerOrderList" class="orderAction" method="customerOrderList">
+			<result name="customerOrderList">/jsps/order/list.jsp</result>
+			<result name="login">/jsps/user/login.jsp</result>
+		</action>
+		
+		<action name="findOrderById" class="orderAction" method="findOrderById">
+			<result name="findOrderById">/jsps/order/desc.jsp</result>
+		</action>
+		
+		<action name="changeOrderState" class="orderAction" method="changeOrderState">
+			<result name="changeOrderState" type="redirectAction">customerOrderList</result>
+		</action>
+		
+		<action name="canceOrder" class="orderAction" method="canceOrder">
+			<result name="canceOrder" type="redirectAction">customerOrderList</result>
+		</action>
+		
+		<action name="deleteOrder" class="orderAction" method="deleteOrder">
+			<result name="deleteOrder" type="redirectAction">customerOrderList</result>
+		</action>
+		<action name="pay" class="orderAction" method="pay">
+
+			<result name="pay" >/jsps/order/realindex.jsp</result>
+			<!-- <result name="pay">/jsps/order/index.jsp</result> -->
+		</action>
+		<action name="isPay" class="orderAction" method="isPay">
+			<result name="isPay">/jsps/order/return.jsp</result>
+		</action>
+		
+		<action name="readyToBuyOne" class="orderAction" method="readyToBuyOne">
+			<result name="readyToBuyOne">/jsps/cart/showOneItem.jsp</result>
+			<result name="gtStock">/jsps/goods/desc.jsp</result>
+			<result name="login">/jsps/user/login.jsp</result>
+		</action>
+		
+		<action name="buyOneItem" class="orderAction" method="buyOneItem">
+			<result name="buyOneItem">/jsps/order/ordersucc.jsp</result>
+			<result name="readyToBuyOne">/jsps/cart/showOneItem.jsp</result>
+		</action>
+	</package>
+	<include file="config/struts/struts-goods.xml"></include>
+	
+	<!-- =======================管理员========================= -->
+	<package name="adminOrder" extends="struts-default" namespace="/adminOrder">
+		<action name="findAllOrder" class="adminOrderAction" method="findAllOrder">
+			<result name="findAllOrder">/adminjsps/admin/order/list.jsp</result>
+		</action>
+		
+		<action name="findAllOrderByState" class="adminOrderAction" method="findAllOrderByState">
+			<result name="findAllOrderByState">/adminjsps/admin/order/list.jsp</result>
+		</action>
+		
+		<action name="orderDesc" class="adminOrderAction" method="orderDesc">
+			<result name="orderDesc">/adminjsps/admin/order/desc.jsp</result>
+		</action>
+		
+		<action name="adminCanceOrder" class="adminOrderAction" method="adminCanceOrder">
+			<result name="adminCanceOrder" type="redirectAction">findAllOrder</result>
+		</action>
+		
+		<action name="updateOrderState" class="adminOrderAction" method="updateOrderState">
+			<result name="updateOrderState" type="redirectAction">findAllOrder</result>
+		</action>
+		<action name="bkfindOrderByPageBean" class="adminOrderAction" method="bkfindOrderByPageBean">
+			<result name="bkfindOrderByPageBean">/adminjsps/admin/order/list.jsp</result>
+		</action>
+	</package>
+	
+	
+	
+</struts>

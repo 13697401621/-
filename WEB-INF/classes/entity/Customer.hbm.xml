@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="entity.Customer" table="t_customer">
+    		<id name="cusername" length="20">
+    		</id>
+    		<property name="cpassword" length="20"></property>
+    		<property name="cname" length="50"></property>
+    		<property name="cgender" length="1"></property>
+    		<property name="cidnumber" length="18"></property>
+    		<property name="cphone" length="11"></property>
+    		<property name="cemail" length="30"></property>
+    		<property name="cstate" length="1"></property>
+    		<property name="registtime" length="50"></property>
+    		<property name="lastlogintime" length="50"></property>
+    		<property name="caddress" length="255"></property>
+    		
+    		<set name="orderSet" lazy="false">
+    			<key column="cusername"></key>
+    			<one-to-many class="entity.Order"/>
+    		</set>
+    	</class>
+    </hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="typeAction" extends="struts-default" namespace="/">
+		<action name="findTypeByDicname" class="typeAction" method="findTypeByDicname" >
+			<result name=""></result>
+		</action>
+		<action name="findTypeByCode" class="typeAction" method="findTypeByCode">
+			<result name=""></result>
+		</action>
+		<action name="findAllCategory" class="typeAction" method="findAllCategory">
+			<result name="findAllCategory">/adminjsps/admin/category/list.jsp</result>
+		</action>
+		<action name="addTopCategory" class="typeAction" method="addTopCategory">
+			<result name="addTopCategory" type="redirectAction">/findAllCategory.action</result>
+		</action>
+		<action name="addSecondCategory" class="typeAction" method="addSecondCategory">
+			<result name="addSecondCategory" type="redirectAction">/findAllCategory.action</result>
+		</action>
+		<action name="deleteCategory" class="typeAction" method="deleteCategory">
+			<result name="deleteCategory" type="redirectAction">/findAllCategory.action</result>
+		</action>
+		<action name="editCategoryPre" class="typeAction" method="editCategoryPre">
+			<result name="editCategoryPre">/adminjsps/admin/category/edit.jsp</result>
+		</action>
+		<action name="editCategory" class="typeAction" method="editCategory">
+			<result name="editCategory" type="redirectAction">/findAllCategory.action</result>
+		</action>
+	</package> 
+</struts>

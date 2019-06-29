@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="goods" extends="struts-default" namespace="/goods">
+		<action name="desc" class="goodsAction" method="desc">
+			<result name="desc">/jsps/goods/desc.jsp</result>
+			<!-- <result name="desc">/jsps/goods/desc2.jsp</result> -->
+		</action>
+		<action name="addGoods" class="goodsAction" method="addGoods">
+			<result name="success" type="redirectAction">/goods/findGoodsByPageBean.action</result>
+			<result name="error">/adminjsps/admin/goods/add.jsp</result>
+		</action>
+		<!-- 前台主页查询商品 -->
+		<action name="findAllGoodsHome" class="goodsAction" method="findAllGoodsHome">
+			<result name="findAllGoodsHome">/jsps/body.jsp</result>
+		</action>
+		<action name="editGoodsPre" class="goodsAction" method="editGoodsPre">
+			<result name="editGoodsPre">/adminjsps/admin/goods/edit.jsp</result>
+		</action>
+		<action name="editGoods" class="goodsAction" method="editGoods">
+			<result name="editGoods" type="redirectAction">/goods/findGoodsByPageBean.action</result>
+		</action>
+		<action name="deleteGoods" class="goodsAction" method="deleteGoods">
+			<result name="deleteGoods" type="redirectAction">/goods/findGoodsByPageBean.action</result>
+		</action>
+		<action name="findGoodsByCriteria" class="goodsAction" method="findGoodsByCriteria">
+			<result name="findGoodsByCriteria">/adminjsps/admin/goods/list2.jsp</result>
+		</action>
+		<action name="bkfindGoodsByPageBean" class="goodsAction" method="bkfindGoodsByPageBean">
+			<result name="bkfindGoodsByPageBean">/adminjsps/admin/goods/list2.jsp</result>
+		</action>
+		<action name="findGoodsByPageBean" class="goodsAction" method="findGoodsByPageBean">
+			<result name="findGoodsByPageBean">/jsps/goods/list2.jsp</result>
+		</action>
+	</package>
+</struts>

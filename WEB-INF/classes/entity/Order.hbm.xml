@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="entity.Order" table="t_order">
+    		<id name="oid" length="32"></id>
+    		<property name="time" length="20"></property>
+    		<property name="paytime" length="50"></property>
+    		<property name="totalprice" length="18"></property>
+    		<property name="address" length="11"></property>
+    		<property name="message" length="200"></property>
+    		<property name="ostate" length="1"></property>
+    		<property name="consigneeName" length="20"></property>
+    		<property name="consigneePhone" length="20"></property>
+    		<many-to-one name="customer" class="entity.Customer" column="cusername" lazy="false" ></many-to-one>
+    		
+	    	<set name="items" table="t_item" lazy="false" inverse="true" cascade="save-update, delete">
+				<key column="oid"></key>
+				<one-to-many class="entity.Item"/>
+			</set>
+    	</class>
+    </hibernate-mapping>
